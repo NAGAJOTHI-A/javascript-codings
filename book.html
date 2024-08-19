@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>bookapp</title>
+</head>
+
+<body>
+  <link rel="stylesheet" href="book.css" />
+  <div class="head">
+    <h1>booksky</h1>
+  </div>
+  <div class="bigcontainer">
+    <div class="container">
+      <h2>Rich dad poor dad</h2>
+      <h5>robert</h5>
+      <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. In velit
+        facilis, ut nulla quas reprehenderit dolores quaerat sunt!
+        Voluptatibus eligendi ratione, aut quam totam voluptatem similique
+        nostrum exercitationem quibusdam numquam!
+      </p>
+      <button onclick="delbook(event)">remove</button>
+    </div>
+  </div>
+  <div class="overlay"></div>
+  <div class="popup">
+    <h2>Add book</h2>
+    <form>
+      <input type="text" placeholder="Enter book title" id="title-name" />
+      <input type="text" placeholder="Enter book author name" id="author-name" />
+      <textarea placeholder="short description about book" id="description"></textarea>
+      <button id="addbook">Add book</button>
+      <button id="cancelbtn">cancel popup</button>
+    </form>
+  </div>
+  <button class="addbtn">+</button>
+  <script>
+    //selecting addpopupbtn,overlay,popup
+    var popup = document.querySelector(".popup");
+    var overlay = document.querySelector(".overlay");
+    var addbtn = document.querySelector(".addbtn");
+    addbtn.addEventListener("click", function () {
+      popup.style.display = "block";
+      overlay.style.display = "block";
+    });
+    //selecting cancel button
+    var cancelbtn = document.getElementById("cancelbtn");
+    cancelbtn.addEventListener("click", function (event) {
+      event.preventDefault();
+      popup.style.display = "none";
+      overlay.style.display = "none";
+    });
+    //selecting bigcontainer,title-name,author-name,description,addbook
+    var bigcontainer = document.querySelector(".bigcontainer");
+    var titlename = document.getElementById("title-name");
+    var authorname = document.getElementById("author-name");
+    var description = document.getElementById("description");
+    var addbook = document.getElementById("addbook");
+    addbook.addEventListener("click", function (event) {
+      event.preventDefault();
+      var div = document.createElement("div");
+      div.setAttribute("class", "container");
+      div.innerHTML = `<h2>${titlename.value}</h2>
+   <h5>${authorname.value}</h5>
+        <p>${description.value}</p>
+        <button onclick="delbook(event)">remove</button>`;
+      bigcontainer.append(div);
+      popup.style.display = "none";
+      overlay.style.display = "none";
+    });
+    function delbook(event) {
+      event.target.parentElement.remove();
+    }
+
+  </script>
+</body>
+
+</html>

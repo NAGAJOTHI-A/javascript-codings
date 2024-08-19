@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="lengthconvertor.css">
+    <title>degreeconvertor</title>
+</head>
+<body>
+    <div id="wrapper">
+        <h2>Celcius to Fahrenheit</h2>
+        <div>
+          <input type="text" id="input" placeholder="Degree In Celcius">
+        </div>
+        <div>
+         <button onclick="convert()">Convert to Fahrenheit</button>
+        </div>
+        <div id="result"></div>
+    </div>
+    <script>
+    function convert()
+    {
+      const celVal=Number(document.getElementById("input").value)
+      const fahVal= (celVal*1.8)+32
+      const res=document.getElementById("result")
+      res.innerHTML=fahVal.toFixed(2)+ "Fahrenheit"
+    }
+    </script>
+    
+</body>
+</html>

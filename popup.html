@@ -1,0 +1,51 @@
+<style>
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: 0.8;
+    top: 0px;
+    left: 0px;
+    padding: 0px;
+    position: absolute;
+    display: none;
+    z-index: 1;
+  }
+  .popupbox {
+    width: 40%;
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 10px;
+    left: 30%;
+    display: none;
+    position: absolute;
+    top: 10%;
+    z-index: 3;
+  }
+</style>
+<button onclick="show()">add</button>
+<div class="overlay">
+  <div class="popupbox">
+    <h1>How's your day going?</h1>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea ipsam sed
+      quaerat excepturi quisquam enim iusto ad a voluptas ab nemo odio
+      voluptatem beatae, fuga, ullam cum veritatis aut harum.
+    </p>
+    <button onclick="remove()">remove</button>
+  </div>
+</div>
+<script>
+  //select overlay and popupbox
+  var overlay = document.querySelector(".overlay");
+  var popupbox = document.querySelector(".popupbox");
+  function show() {
+    overlay.style.display = "block";
+    popupbox.style.display = "block";
+  }
+  function remove() {
+    overlay.style.display = "none";
+    popupbox.style.display = "none";
+  }
+</script>

@@ -1,0 +1,10 @@
+<div id="one">hii</div>
+<button onclick="innerhtml()">add</button>
+<script>
+  var container = document.getElementById("one");
+  console.log(container.textContent);
+  function innerhtml() {
+    container.innerHTML = "<h1>Joe</h1>";
+    console.log(container.innerHTML);
+  }
+</script>

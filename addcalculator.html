@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>javascript</title>
+  </head>
+  <body>
+    <input id="box1" />
+    <input id="box2" />
+    <button onclick="add()">click me</button>
+    <p id="result">Result</p>
+    <script>
+      var b1 = document.getElementById("box1");
+      var b2 = document.getElementById("box2");
+      var res = document.getElementById("result");
+
+      function add() {
+        var num1 = b1.value;
+        var num2 = b2.value;
+        var total = Number(num1) + Number(num2);
+        res.textContent = "Result:" + total;
+      }
+    </script>
+  </body>
+</html>
